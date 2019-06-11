@@ -1,7 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
+import moment from "moment";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentTime: moment.duration(25, "minutes"),
+      baseTime: moment.duration(25, "minutes")
+    };
+  }
+
   render() {
     return (
       <div className="card text-center text-white bg-info">
