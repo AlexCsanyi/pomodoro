@@ -1,18 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from "react";
 import "./App.css";
-import "./index.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
-global.jQuery = require("jquery");
-require("bootstrap");
-
-class App extends React.Component {
+class App extends Component {
   render() {
-    return <div className="App">Hello Pomodoro Project</div>;
+    return (
+      <div className="card text-center text-white bg-info">
+        <div class="card-header text-uppercase">Pomodoro Power</div>
+        <div class="card-header">00:00:00</div>
+        <div class="card-body">
+          <h5 class="card-title">Set Timer</h5>
+          <div className="row">
+            <div className="form-group p-1">
+              <label htmlFor="hours">Hours</label>
+              <input id="hours" type="number" className="form-control" />
+            </div>
+            <div className="form-group p-1">
+              <label htmlFor="minutes">Minutes</label>
+              <input id="minutes" type="number" className="form-control" />
+            </div>
+            <div className="form-group p-1">
+              <label htmlFor="seconds">Seconds</label>
+              <input id="seconds" type="number" className="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
 export default App;
-
-ReactDOM.render(<App />, document.getElementById("root"));
