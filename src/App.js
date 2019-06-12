@@ -14,15 +14,24 @@ class App extends Component {
       currentTime: moment.duration(25, "minutes"),
       baseTime: moment.duration(25, "minutes")
     };
+
+    this.setBaseTime = this.setBaseTime.bind(this);
+  }
+
+  setBaseTime(newBaseTime) {
+    this.setState({
+      baseTime: newBaseTime,
+      currentTime: newBaseTime
+    });
   }
 
   render() {
     return (
       <div className="card text-center text-white bg-info">
         <TimerHeader />
-        <TimerDisplay />
+        <TimerDisplay currentTime={this.state.currentTime} />
         <TimerButton />
-        <Timer />
+        <Timer baseTime={this.state.baseTime} setBaseTime={this.setBaseTime} />
       </div>
     );
   }
