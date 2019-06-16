@@ -1,7 +1,7 @@
 import React from "react";
 import * as timerStates from "../timerStates";
 // import { Player, ControlBar } from "video-react";
-import "../../node_modules/video-react/dist/video-react.css";
+// import "../../node_modules/video-react/dist/video-react.css";
 
 const leftPad = val => {
   if (val < 10) return `0${val}`;
